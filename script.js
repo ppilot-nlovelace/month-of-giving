@@ -42,7 +42,36 @@
     nameInput.value = ''; updateVenmoLink(); if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
   }
   amountInput.addEventListener('input', updateVenmoLink); nameInput.addEventListener('input', updateVenmoLink);
-  venmoBtn.addEventListener('click', () => { const fallback = venmoBtn.dataset.fallback; setTimeout(() => { try{ window.open(fallback,'_blank'); } catch{} }, 1500); });
+  venmoBtn.addEventListener('click', async () => {
+  const amt = parseFloat(amountInput.value || '0');
+  if (!amt || amt <= 0) {
+    alert('Please enter a valid amount first.');
+    return;
+  }
+
+  try {
+    if (typeof window.savePledge === 'function') {
+      // Firebase version: persist for everyone
+      await window.savePledge(activeCell, amt, (nameInput.value || '').trim());
+    } else {
+      // Local-only version (no Firebase)
+      window.__markCell(activeCell, amt);
+    }
+  } catch (err) {
+    // If saving fails (e.g., already taken), we still let them try to pay
+    console.warn('Could not save pledge before opening Venmo:', err);
+  }
+
+  // Close dialog and go to Venmo
+  if (dlg.open) dlg.close();
+
+  // Kick to the Venmo deep link; then open the web fallback shortly after
+  const fallback = venmoBtn.dataset.fallback;
+  const url = venmoBtn.href;
+  window.location.href = url; // deep link for mobile
+  setTimeout(() => { try { window.open(fallback, '_blank'); } catch {} }, 1500);
+});
+
   markBtn.addEventListener('click', async (e) => { e.preventDefault(); const amt = parseFloat(amountInput.value || '0'); if (!amt || amt <= 0) { alert('Please enter a valid amount first.'); return; }
     if (typeof window.savePledge === 'function') await window.savePledge(activeCell, amt, (nameInput.value || '').trim()); else window.__markCell(activeCell, amt); dlg.close(); });
   function markCellAsPledged(cell, amount){ if (!cell) return; cell.classList.add('pledged'); const amountEl = cell.querySelector('.amount'); amountEl.textContent = `$${amount}`; }
