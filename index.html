@@ -9,10 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <!-- Ensure .wrap constrains width even if styles.css changed -->
-  <style>
-    .wrap { width: min(1100px, 92vw); margin: 0 auto; }
-  </style>
+  <style>.wrap{width:min(1100px,92vw);margin:0 auto}</style>
 </head>
 <body>
   <header class="site-header">
@@ -22,47 +19,43 @@
     </div>
   </header>
 
-  <!-- Everything below stays inside this one .wrap main -->
   <main class="wrap">
 
-  <!-- ABOUT ELLA -->
-<section class="hero card" id="about">
-  <div class="bio-grid">
-    <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
-    <div>
-      <div class="eyebrow">About Ella</div>
-      <h2>Meet Ella</h2>
-      <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
-      <ul>
-        <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
-        <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
-        <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="hero card" id="how-it-works">
-  <div class="bio-grid">
-    <div>
-      <div class="eyebrow">About the Fundraiser</div>
-      <h2>How It Works</h2>
-      <p>To support our orchestra, Ella is launching her <em>Month of Giving</em> fundraiser! It’s simple: pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10). The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are <em>any amount</em>.</p>
-      <ol>
-        <li>Tap a date.</li>
-        <li>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate. The day is automatically marked as taken.</li>
-      </ol>
-
-      <div class="cta">
-        <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
+    <!-- ABOUT ELLA (two-column with photo) -->
+    <section class="hero card" id="about">
+      <div class="bio-grid">
+        <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
+        <div>
+          <div class="eyebrow">About Ella</div>
+          <h2>Meet Ella</h2>
+          <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
+          <ul>
+            <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
+            <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
+            <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <p><em>Every dollar helps our orchestra access the resources to grow our musical skills — thank you for your support!</em></p>
-    </div>
-  </div>
-</section>
+    <!-- HOW IT WORKS (single-column card — no .bio-grid) -->
+    <section class="hero card" id="how-it-works">
+      <div>
+        <div class="eyebrow">About the Fundraiser</div>
+        <h2>How It Works</h2>
+        <p>Pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10). The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are <em>any amount</em>.</p>
+        <ol>
+          <li>Tap a date.</li>
+          <li>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate. The day is automatically marked as taken.</li>
+        </ol>
 
+        <div class="cta">
+          <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
+        </div>
+
+        <p><em>Every dollar helps our orchestra access the resources to grow our musical skills — thank you for your support!</em></p>
+      </div>
+    </section>
 
     <!-- CALENDAR -->
     <section class="calendar card" aria-labelledby="calTitle">
@@ -106,7 +99,6 @@
     </div>
   </footer>
 
-  <!-- Donation dialog -->
   <dialog id="donateDialog" aria-labelledby="donateTitle">
     <form method="dialog" id="donateForm">
       <h3 id="donateTitle">Complete your donation</h3>
@@ -124,12 +116,11 @@
         <button id="markBtn" class="button button-outline" value="mark">Mark day as done</button>
         <button class="button button-text" value="cancel">Cancel</button>
       </div>
-      <p class="tiny">If Venmo doesn’t open automatically, you can still donate at
+      <p class="tiny">If Venmo doesn’t open automatically, donate at
         <a href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">venmo.com/u/ellamae10</a> and enter the amount above.</p>
     </form>
   </dialog>
 
-  <!-- Config + scripts -->
   <script>
     window.FUNDRAISER = {
       venmoUsername: "ellamae10",
@@ -145,7 +136,6 @@
         apiKey: "AIzaSyB0cIwhg8snAetgdlU1hQRwt5zy5FwPbsA",
         authDomain: "ella-orchestra-fundraiser.firebaseapp.com",
         projectId: "ella-orchestra-fundraiser",
-        /* We don’t use Storage, but the typical bucket domain is "<project-id>.appspot.com" */
         storageBucket: "ella-orchestra-fundraiser.appspot.com",
         messagingSenderId: "135728099731",
         appId: "1:135728099731:web:13fa7380d7258ad33c3866"
