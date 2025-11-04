@@ -163,4 +163,52 @@ html { -webkit-text-size-adjust: 100%; }
 
 /* Guard against iOS text auto-zoom shifting widths */
 html { -webkit-text-size-adjust: 100%; }
+/* === Mobile calendar hard overrides === */
+html { -webkit-text-size-adjust: 100%; } /* stop iOS auto-zoom shifts */
+
+/* Phones up to ~iPhone 14/15 width */
+@media (max-width: 430px) {
+  .calendar.card {
+    padding: 10px 6px !important;   /* narrower card padding */
+    overflow: hidden;               /* prevent any bleed */
+  }
+
+  /* Force 7 equal columns, smaller spacing, add tiny right buffer */
+  .calendar .grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    padding-right: 2px !important;  /* 2px safety so last column never clips */
+  }
+
+  .calendar .dayname {
+    font-size: 0.84rem !important;
+    padding: 0.28rem 0 !important;
+    line-height: 1.05 !important;
+  }
+
+  .cell {
+    min-height: 64px !important;
+    padding: 0.30rem !important;
+    border-radius: 9px !important;
+  }
+  .cell .label,
+  .cell .amount {
+    font-size: 0.84rem !important;
+    line-height: 1.1 !important;
+  }
+  .cell .badge {
+    top: 4px; right: 4px;
+    font-size: 0.68rem; padding: 0.1rem 0.3rem;
+  }
+}
+
+/* Extra-tight layout for very narrow phones (SE/mini) */
+@media (max-width: 375px) {
+  .calendar.card { padding: 10px 4px !important; }
+  .calendar .grid { gap: 4px !important; padding-right: 1px !important; }
+  .calendar .dayname { font-size: 0.8rem !important; }
+  .cell { min-height: 60px !important; }
+  .cell .label, .cell .amount { font-size: 0.8rem !important; }
+}
 
