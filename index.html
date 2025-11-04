@@ -17,60 +17,84 @@
       <a class="venmo-top" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo</a>
     </div>
   </header>
- <main class="wrap">
-  <section class="hero card" id="about">
-    <div class="bio-grid">
-      <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
-      <div>
-        <div class="eyebrow">About Ella &amp; How It Works</div>
 
-        <h2>Meet Ella</h2>
-        <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
-        <ul>
-          <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
-          <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
-          <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
-        </ul>
+  <!-- Keep everything inside this .wrap main -->
+  <main class="wrap">
 
-      <h2>The Fundraiser — How it works</h2>
-      <p>Pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10). The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are <em>any amount</em>.</p>
-      <ul>
-      <li>Tap a date.</li>
-      <li>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate. The day is automatically marked as taken.</li>
-      </ul>
-        <div class="cta">
-          <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
+    <!-- HERO (bio + how it works) -->
+    <section class="hero card" id="about">
+      <div class="bio-grid">
+        <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
+        <div>
+          <div class="eyebrow">About Ella &amp; How It Works</div>
+
+          <h2>Meet Ella</h2>
+          <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
+          <ul>
+            <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
+            <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
+            <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
+          </ul>
+
+          <h2>The fundraiser — how it works</h2>
+          <p>Pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10). The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are <em>any amount</em>.</p>
+          <ol>
+            <li>Tap a date.</li>
+            <li>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate. The day is automatically marked as taken.</li>
+          </ol>
+
+          <div class="cta">
+            <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
+          </div>
+
+          <p><em>Every dollar helps our orchestra access the resources to grow our musical skills — thank you for your support!</em></p>
         </div>
-        <p><em>Every dollar helps our orchestra access the resources to grow our musical skills — thank you for your support!</em></p>
       </div>
-    </div>
- </main>
-</section>
-  <section class="calendar card" aria-labelledby="calTitle">
-  <div class="calendar-header">
-    <h2 id="calTitle">Pick a day to give</h2>
-    <div class="legend"><span class="chip any">Any amount</span><span class="chip pledged">Taken</span></div>
-  </div>
-  <div class="grid" role="grid" aria-label="Donation calendar">
-    <div class="dayname">Sun</div><div class="dayname">Mon</div><div class="dayname">Tue</div>
-    <div class="dayname">Wed</div><div class="dayname">Thu</div><div class="dayname">Fri</div><div class="dayname">Sat</div>
-  </div>
-  <p class="footnote">By selecting a day, you’ll donate that amount. Example: 15 → $15. Blank days = any amount.</p>
-</section><section class="share card">
-  <h2>Share</h2>
-  <p>Know someone who might chip in? Share this page:</p>
-  <div class="share-actions">
-    <button id="shareBtn" class="button">Share</button>
-    <button id="copyLinkBtn" class="button button-outline">Copy link</button>
-  </div>
-</section></main>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="calendar card" aria-labelledby="calTitle">
+      <div class="calendar-header">
+        <h2 id="calTitle">Pick a day to give</h2>
+        <div class="legend">
+          <span class="chip any">Any amount</span>
+          <span class="chip pledged">Taken</span>
+        </div>
+      </div>
+
+      <div class="grid" role="grid" aria-label="Donation calendar">
+        <div class="dayname">Sun</div>
+        <div class="dayname">Mon</div>
+        <div class="dayname">Tue</div>
+        <div class="dayname">Wed</div>
+        <div class="dayname">Thu</div>
+        <div class="dayname">Fri</div>
+        <div class="dayname">Sat</div>
+      </div>
+
+      <p class="footnote">By selecting a day, you’ll donate that amount. Example: 15 → $15. Blank days = any amount.</p>
+    </section>
+
+    <!-- SHARE -->
+    <section class="share card">
+      <h2>Share</h2>
+      <p>Know someone who might chip in? Share this page:</p>
+      <div class="share-actions">
+        <button id="shareBtn" class="button">Share</button>
+        <button id="copyLinkBtn" class="button button-outline">Copy link</button>
+      </div>
+    </section>
+
+  </main>
+
   <footer class="site-footer">
     <div class="wrap">
       Made with ♥ for the JWMHS Orchestra. Questions? Donate directly at
       <a href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">@ellamae10</a>.
     </div>
   </footer>
-  <!-- Dialog -->
+
+  <!-- Donation dialog -->
   <dialog id="donateDialog" aria-labelledby="donateTitle">
     <form method="dialog" id="donateForm">
       <h3 id="donateTitle">Complete your donation</h3>
@@ -92,31 +116,33 @@
         <a href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">venmo.com/u/ellamae10</a> and enter the amount above.</p>
     </form>
   </dialog>
-<script>
-  window.FUNDRAISER = {
-    venmoUsername: "ellamae10",
-    notePrefix: "JWMHS Orchestra Month of Giving",
-    layout: [
-      ["any","any","any",1,2,3,4],
-      [5,6,7,8,9,10,11],
-      [12,13,14,15,16,17,18],
-      [19,20,21,22,23,24,25],
-      [26,27,28,29,30,31,"any"]
-    ],
-    firebaseConfig: {
-      apiKey: "AIzaSyB0cIwhg8snAetgdlU1hQRwt5zy5FwPbsA",
-      authDomain: "ella-orchestra-fundraiser.firebaseapp.com",
-      projectId: "ella-orchestra-fundraiser",
-      /* Either value is okay for this site since we don't use Storage,
-         but the typical bucket domain is: "<project-id>.appspot.com" */
-      storageBucket: "ella-orchestra-fundraiser.appspot.com",
-      messagingSenderId: "135728099731",
-      appId: "1:135728099731:web:13fa7380d7258ad33c3866"
-    }
-  };
-</script>
+
+  <!-- Config + scripts -->
+  <script>
+    window.FUNDRAISER = {
+      venmoUsername: "ellamae10",
+      notePrefix: "JWMHS Orchestra Month of Giving",
+      layout: [
+        ["any","any","any",1,2,3,4],
+        [5,6,7,8,9,10,11],
+        [12,13,14,15,16,17,18],
+        [19,20,21,22,23,24,25],
+        [26,27,28,29,30,31,"any"]
+      ],
+      firebaseConfig: {
+        apiKey: "AIzaSyB0cIwhg8snAetgdlU1hQRwt5zy5FwPbsA",
+        authDomain: "ella-orchestra-fundraiser.firebaseapp.com",
+        projectId: "ella-orchestra-fundraiser",
+        /* We don’t use Storage, but the typical bucket domain is "<project-id>.appspot.com" */
+        storageBucket: "ella-orchestra-fundraiser.appspot.com",
+        messagingSenderId: "135728099731",
+        appId: "1:135728099731:web:13fa7380d7258ad33c3866"
+      }
+    };
+  </script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
   <script src="script.js" defer></script>
-</body></html>
+</body>
+</html>
