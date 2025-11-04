@@ -82,21 +82,23 @@
     venmoUsername: "ellamae10",
     notePrefix: "JWMHS Orchestra Month of Giving",
     layout: [
-        ["any","any","any",1,2,3,4],
-        [5,6,7,8,9,10,11],
-        [12,13,14,15,16,17,18],
-        [19,20,21,22,23,24,25],
-        [26,27,28,29,30,31,"any"]
-      ],
-firebaseConfig = {
-  apiKey: "AIzaSyB0cIwhg8snAetgdlU1hQRwt5zy5FwPbsA",
-  authDomain: "ella-orchestra-fundraiser.firebaseapp.com",
-  projectId: "ella-orchestra-fundraiser",
-  storageBucket: "ella-orchestra-fundraiser.firebasestorage.app",
-  messagingSenderId: "135728099731",
-  appId: "1:135728099731:web:13fa7380d7258ad33c3866"
-  }
-};
+      ["any","any","any",1,2,3,4],
+      [5,6,7,8,9,10,11],
+      [12,13,14,15,16,17,18],
+      [19,20,21,22,23,24,25],
+      [26,27,28,29,30,31,"any"]
+    ],
+    firebaseConfig: {
+      apiKey: "AIzaSyB0cIwhg8snAetgdlU1hQRwt5zy5FwPbsA",
+      authDomain: "ella-orchestra-fundraiser.firebaseapp.com",
+      projectId: "ella-orchestra-fundraiser",
+      /* Either value is okay for this site since we don't use Storage,
+         but the typical bucket domain is: "<project-id>.appspot.com" */
+      storageBucket: "ella-orchestra-fundraiser.appspot.com",
+      messagingSenderId: "135728099731",
+      appId: "1:135728099731:web:13fa7380d7258ad33c3866"
+    }
+  };
 </script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
