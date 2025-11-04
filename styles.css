@@ -82,3 +82,23 @@ input[type="text"],input[type="number"]{padding:.7rem .8rem;border:1px solid #e1
 .share-actions{display:flex;gap:.6rem;flex-wrap:wrap}
 
 .site-footer{font-size:.9rem;color:#5e4b38}
+/* --- Expand HOW IT WORKS card to full card width --- */
+.hero.card.single-column { display: block; }
+
+/* Kill the centered/narrow max-width that was applied earlier */
+.hero.card.single-column > div {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Optional: two-column layout on large screens to reduce height */
+@media (min-width: 900px) {
+  #how-it-works > div {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* intro | steps */
+    gap: 28px;
+    align-items: start;
+  }
+  #how-it-works ol { margin: 0; }
+}
