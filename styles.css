@@ -11,6 +11,9 @@
 .hero img{width:100%;height:auto;border-radius:12px;object-fit:cover;aspect-ratio:3/4;box-shadow:0 12px 20px rgba(0,0,0,.08)}
 .hero .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#8a6134;font-size:.8rem}
 .hero .cta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
+/* Fix single-column hero cards */
+.hero.card.single-column {display: block;}
+.hero.card.single-column > div {max-width: 700px;margin: 0 auto;}
 @media(max-width:720px){.bio-grid{grid-template-columns:1fr}.hero img{max-width:240px}}
 /* Calendar */
 .legend .chip{display:inline-block;font-size:.85rem;padding:.2rem .55rem;border-radius:999px;background:#f2ece6;border:1px solid #e2d4c6;margin-left:.25rem}
