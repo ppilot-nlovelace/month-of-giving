@@ -91,3 +91,37 @@ input[type="text"],input[type="number"]{padding:.7rem .8rem;border:1px solid #e1
 .share-actions{display:flex;gap:.6rem;flex-wrap:wrap}
 
 .site-footer{font-size:.9rem;color:#5e4b38}
+/* --- Mobile calendar tuning --- */
+@media (max-width: 420px) {
+  /* tighten the card a bit so 7 columns fit */
+  .calendar.card { padding: 10px 8px; overflow: hidden; }
+
+  /* make columns flexible and reduce gaps */
+  .calendar .grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+    margin-inline: 2px; /* tiny buffer so the last column isn't clipped */
+  }
+
+  /* smaller weekday labels */
+  .calendar .dayname {
+    font-size: 0.85rem;
+    padding: .3rem 0;
+  }
+
+  /* smaller cells to avoid wrapping */
+  .cell {
+    min-height: 66px;
+    padding: .3rem;
+  }
+  .cell .label { font-size: .85rem; }
+  .cell .amount { font-size: .85rem; }
+  .cell .badge {
+    top: 4px; right: 4px;
+    font-size: .68rem; padding: .1rem .3rem;
+  }
+}
+
+/* iOS text zoom sanity */
+html { -webkit-text-size-adjust: 100%; }
+
