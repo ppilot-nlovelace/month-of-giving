@@ -1,1 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JWMHS Orchestra — Month of Giving</title>
+  <meta name="description" content="Pick a date, donate that amount. Help the JWMHS Orchestra Month of Giving fundraiser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="title">JWMHS Orchestra — Month of Giving</h1>
+      <a class="venmo-top" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo</a>
+    </div>
+  </header>
 
+  <main class="wrap">
+    
+    <section class="intro card">
+      <h2>How it works</h2>
+      <p class="lead">Pick a date on the calendar and donate <strong>that dollar amount</strong> to support the JWMHS Orchestra. Example: choose the 5th → $5. The blank boxes are <em>“any amount”</em>—give what you can. Every gift helps with music, instruments, and our spring trip.</p>
+      <p class="teen-voice">A note from Ella: “Hi! I’m running my Month of Giving fundraiser for orchestra. Just pick any date and that’s how much you give—like the 5th is $5. The first three boxes are ‘choose your amount.’ Thanks so much for supporting our music!”</p>
+    </section>
+    
+    <section class="calendar card" aria-labelledby="calTitle">
+      <div class="calendar-header">
+        <h2 id="calTitle">Pick a day to give</h2>
+        <div class="legend">
+          <span class="chip any">Any amount</span>
+          <span class="chip pledged">Taken</span>
+        </div>
+      </div>
+
+      <div class="grid" role="grid" aria-label="Donation calendar">
+        <div class="dayname">Sun</div>
+        <div class="dayname">Mon</div>
+        <div class="dayname">Tue</div>
+        <div class="dayname">Wed</div>
+        <div class="dayname">Thu</div>
+        <div class="dayname">Fri</div>
+        <div class="dayname">Sat</div>
+      </div>
+
+      <p class="footnote">By selecting a day, you’ll donate that amount. Example: 15 → $15. Blank days = any amount.</p>
+    </section>
+    
+    <section class="bio card" id="about-ella">
+      <div class="bio-grid">
+        <img src="assets/ella-viola.jpg" alt="Teen violist holding a viola on stage">
+        <div>
+          <div class="eyebrow">About the musician</div>
+          <h2>Meet Ella</h2>
+          <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
+          <ul>
+            <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
+            <li><strong>First‑chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
+            <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section class="share card">
+      <h2>Share</h2>
+      <p>Know someone who might chip in? Share this page:</p>
+      <div class="share-actions">
+        <button id="shareBtn" class="button">Share</button>
+        <button id="copyLinkBtn" class="button button-outline">Copy link</button>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Made with ♥ for the JWMHS Orchestra. Questions? Donate directly at
+      <a href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">@ellamae10</a>.
+    </div>
+  </footer>
+
+  <!-- Donation dialog -->
+  <dialog id="donateDialog" aria-labelledby="donateTitle">
+    <form method="dialog" id="donateForm">
+      <h3 id="donateTitle">Complete your donation</h3>
+      <p id="donateSub"></p>
+      <div class="form-row">
+        <label for="amountInput">Amount (USD)</label>
+        <input id="amountInput" type="number" inputmode="decimal" min="1" step="1" required />
+      </div>
+      <div class="form-row">
+        <label for="nameInput">Your name (optional)</label>
+        <input id="nameInput" type="text" maxlength="40" placeholder="e.g., Alex Johnson" />
+      </div>
+      <div class="actions">
+        <a id="venmoBtn" class="button" target="_blank" rel="noopener">Open Venmo</a>
+        <button id="markBtn" class="button button-outline" value="mark">Mark day as done</button>
+        <button class="button button-text" value="cancel">Cancel</button>
+      </div>
+      <p class="tiny">If Venmo doesn’t open automatically, you can still donate at
+        <a href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">venmo.com/u/ellamae10</a> and enter the amount above.</p>
+    </form>
+  </dialog>
+
+  <script>
+    window.FUNDRAISER = {
+      venmoUsername: "ellamae10",
+      notePrefix: "JWMHS Orchestra Month of Giving",
+      layout: [
+        ["any","any","any",1,2,3,4],
+        [5,6,7,8,9,10,11],
+        [12,13,14,15,16,17,18],
+        [19,20,21,22,23,24,25],
+        [26,27,28,29,30,31,"any"]
+      ],
+      firebaseConfig: {
+        apiKey: 'YOUR_API_KEY',
+        authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
+        projectId: 'YOUR_PROJECT_ID',
+        storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+        messagingSenderId: 'YOUR_SENDER_ID',
+        appId: 'YOUR_APP_ID'
+      }
+    };
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
