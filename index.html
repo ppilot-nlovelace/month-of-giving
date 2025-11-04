@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <!-- Ensure .wrap constrains width even if styles.css changed -->
+  <style>
+    .wrap { width: min(1100px, 92vw); margin: 0 auto; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,7 +22,7 @@
     </div>
   </header>
 
-  <!-- Keep everything inside this .wrap main -->
+  <!-- Everything below stays inside this one .wrap main -->
   <main class="wrap">
 
     <!-- HERO (bio + how it works) -->
