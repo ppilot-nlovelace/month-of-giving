@@ -9,73 +9,72 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <style>.wrap{width:min(1100px,92vw);margin:0 auto}</style>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
       <h1 class="title">J.W. Mitchell High School Orchestra — Month of Giving</h1>
-     <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
+      <a class="button" href="https://venmo.com/u/ellamae10" target="_blank" rel="noopener">Donate on Venmo @ellamae10</a>
     </div>
   </header>
 
   <main class="wrap">
 
-   <!-- ABOUT ELLA -->
-<section class="hero card" id="about">
-  <div class="bio-grid">
-    <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
-    <div>
-      <div class="eyebrow">About Ella</div>
-      <h2>Meet Ella</h2>
-      <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
-      <ul>
-        <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
-        <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
-        <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="hero card" id="how-it-works">
-  <div>
-    <div class="eyebrow">About the Fundraiser</div>
-    <h2>How It Works</h2>
-
-    <p>
-      Pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10).
-      The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are
-      <em>any amount</em>.
-    </p>
-
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h3>Pick a date</h3>
-        <p>Tap any available box — the number is the amount you give.</p>
+    <!-- ABOUT ELLA -->
+    <section class="hero card" id="about">
+      <div class="bio-grid">
+        <img src="assets/ella-viola.jpg" alt="Ella holding her viola on stage">
+        <div>
+          <div class="eyebrow">About Ella</div>
+          <h2>Meet Ella</h2>
+          <p>Ella is a dedicated violist in the JWMHS Orchestra. She’s earned recognition across our county and within the program for her leadership and musicianship.</p>
+          <ul>
+            <li><strong>All-County Orchestra violist</strong> for four consecutive years (6th–9th grade) with plans to audition again this year.</li>
+            <li><strong>First-chair violist as a sophomore,</strong> leading a section that includes upperclassmen.</li>
+            <li><strong>Featured soloist</strong> in multiple ensemble and orchestra performances.</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h3>Open Venmo</h3>
-        <p>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate.</p>
+    <!-- HOW IT WORKS -->
+    <section class="hero card" id="how-it-works">
+      <div>
+        <div class="eyebrow">About the Fundraiser</div>
+        <h2>How It Works</h2>
+
+        <p>
+          Pick a date on the calendar and donate <strong>that dollar amount</strong> (the 10th = $10).
+          The <strong>first three boxes</strong> and the <strong>bottom-right box</strong> are
+          <em>any amount</em>.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Pick a date</h3>
+            <p>Tap any available box — the number is the amount you give.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Open Venmo</h3>
+            <p>Enter your name (optional) and tap <strong>Open Venmo</strong> to donate.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>You’re all set</h3>
+            <p>The day is automatically marked as taken for everyone.</p>
+          </div>
+        </div>
+
+        <p class="muted">
+          Every dollar helps our orchestra access the resources to grow our musical skills —
+          thank you for your support!
+        </p>
       </div>
-
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h3>You’re all set</h3>
-        <p>The day is automatically marked as taken for everyone.</p>
-      </div>
-    </div>
-
-    <p class="muted">
-      Every dollar helps our orchestra access the resources to grow our musical skills —
-      thank you for your support!
-    </p>
-  </div>
-</section>
+    </section>
 
     <!-- CALENDAR -->
     <section class="calendar card" aria-labelledby="calTitle">
@@ -119,6 +118,7 @@
     </div>
   </footer>
 
+  <!-- Dialog -->
   <dialog id="donateDialog" aria-labelledby="donateTitle">
     <form method="dialog" id="donateForm">
       <h3 id="donateTitle">Complete your donation</h3>
@@ -141,6 +141,7 @@
     </form>
   </dialog>
 
+  <!-- Config + scripts -->
   <script>
     window.FUNDRAISER = {
       venmoUsername: "ellamae10",
